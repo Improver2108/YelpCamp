@@ -13,10 +13,11 @@ var express         =require("express"),
 var campgroundRoutes=require("./routes/Campgrounds"),
     commentRoutes=require("./routes/Comments"),
     indexRoutes=require("./routes/index")
-
+require('dotenv').config()
 app.use(bodyparser.urlencoded({extended:true}));
-mongoose.connect("mongodb://yash:yash@cluster0-shard-00-00-ycjjf.mongodb.net:27017,cluster0-shard-00-01-ycjjf.mongodb.net:27017,cluster0-shard-00-02-ycjjf.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority",{useNewUrlParser:true});
-//mongoose.connect("mongodb://localhost/yelpCamp");
+console.log(process.env.DATABASEURL)
+
+mongoose.connect(process.env.DATABASEURL,{useNewUrlParser: true });
 app.set("view engine","ejs");
 app.use(express.static(__dirname+"/public"));
 app.use(methodOverride("_method"));
@@ -49,11 +50,6 @@ passport.deserializeUser(User.deserializeUser());
 
 
 
-app.listen(process.env.PORT,process.env.IP, function(){
-    console.log("server has started");
+app.listen(process.env.PORT || 4000,process.env.IP, function(){
+    console.log("server has started on port:"+process.env.PORT);
 });
-
-// app.listen(4000, function(){
-//     console.log("server has started");
-// });
-         
