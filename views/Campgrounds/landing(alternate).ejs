@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YelpCamp</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/landing.css">
+        
+    </head>
+    <body>
+    
+    <div class="container">
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner slideshow m-0 p-0 h-100 w-100">
+        <div id="landing-header" class="carousel-caption d-none d-md-block ">
+ 		      <h1 class="text-center">Welcome to YelpCamp!</h1>
+		      <a href="/campgrounds" class="btn btn-md btn-warning mt-3">View All Campgrounds</a>
+        </div>               
+        <div class="carousel-item active" data-interval="2000">
+          <img class="vh-100 vw-100" src="https://images.wallpaperscraft.com/image/campfire_camping_fire_135898_1920x1080.jpg"  alt="...">
+        </div>
+        <div class="carousel-item" data-interval="2000">
+          <img class="vh-100 vw-100" src="https://cdn.pixabay.com/photo/2015/11/07/11/26/campfire-1031141_1280.jpg"  alt="...">
+        </div>
+        <div class="carousel-item" data-interval="2000">
+          <img class="vh-100 vw-100" src="https://images.wallpaperscraft.com/image/tent_starry_sky_night_133641_1920x1080.jpg"  alt="...">
+        </div>
+        <div class="carousel-item" data-interval="2000">
+          <img class="vh-100 vw-100" src="https://s3.amazonaws.com/imagescloud/images/medias/camping/camping-groupe.jpg"  alt="...">
+        </div>
+        <div class="carousel-item" data-interval="2000">
+          <img class="vh-100 vw-100" src="https://cdn.pixabay.com/photo/2017/08/07/15/35/travel-2604981_1280.jpg"  alt="...">
+        </div>
+      </div>  
+    </div>
+    <script src="/js/jquery-3.4.1.min" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+<% include ../partials/footer %>

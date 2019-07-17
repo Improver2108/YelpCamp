@@ -1,0 +1,1 @@
+D:\MongoDB\Mongo\bin\mongod --dbpath "D:\mongo_data"

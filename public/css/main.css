@@ -1,0 +1,10 @@
+body, html{
+    height: 100%;    
+}
+.img-thumbnail img{
+    width: 100%;
+}
+.img-thumbnail{
+    padding: 0;
+}
+
