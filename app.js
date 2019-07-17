@@ -15,7 +15,7 @@ var campgroundRoutes=require("./routes/Campgrounds"),
     indexRoutes=require("./routes/index")
 
 app.use(bodyparser.urlencoded({extended:true}));
-mongoose.connect("mongodb+srv://yash2108:<yash2108>@cluster0-twtd8.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser:true});
+mongoose.connect("mongodb://yash:yash@cluster0-shard-00-00-ycjjf.mongodb.net:27017,cluster0-shard-00-01-ycjjf.mongodb.net:27017,cluster0-shard-00-02-ycjjf.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority",{useNewUrlParser:true});
 //mongoose.connect("mongodb://localhost/yelpCamp");
 app.set("view engine","ejs");
 app.use(express.static(__dirname+"/public"));
